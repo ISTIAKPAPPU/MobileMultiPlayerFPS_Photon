@@ -35,6 +35,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ActivatePanel(loginUiPanel.name);
         _cachedRoomList = new Dictionary<string, RoomInfo>();
         _roomListGameObjects = new Dictionary<string, GameObject>();
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     private void Update()
@@ -115,6 +116,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
+    public void OnstartGameButtonClicked()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel("GameScene");
+        }
+    }
+
     #endregion
 
     #region Photon Callbacks
@@ -148,6 +157,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             startGameButton.SetActive(false);
         }
+
         roomInfoText.text =
             $"Room Name: {PhotonNetwork.CurrentRoom.Name} Players/MaxPlayers {PhotonNetwork.CurrentRoom.PlayerCount} / {PhotonNetwork.CurrentRoom.MaxPlayers}";
 
@@ -267,13 +277,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-      Debug.Log(message);
-      var roomName = "Room " + Random.Range(1000, 10000);
-      var roomOptions = new RoomOptions
-      {
-          MaxPlayers = 20
-      };
-      PhotonNetwork.CreateRoom(roomName, roomOptions);
+        Debug.Log(message);
+        var roomName = "Room " + Random.Range(1000, 10000);
+        var roomOptions = new RoomOptions
+        {
+            MaxPlayers = 20
+        };
+        PhotonNetwork.CreateRoom(roomName, roomOptions);
     }
 
     #endregion

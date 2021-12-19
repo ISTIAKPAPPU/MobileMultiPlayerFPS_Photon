@@ -1503,9 +1503,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnStartButtonClicked
+      - m_Target: {fileID: 1706851797}
+        m_TargetAssemblyTypeName: NetworkManager, Assembly-CSharp
+        m_MethodName: OnstartGameButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3092,8 +3092,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -448.31775}
-  m_SizeDelta: {x: 1320, y: 696.6355}
+  m_AnchoredPosition: {x: 960, y: -447.8907}
+  m_SizeDelta: {x: 1320, y: 695.7814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103327248
 MonoBehaviour:
@@ -3554,7 +3554,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 367220499}
   m_HandleRect: {fileID: 367220498}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4659,7 +4659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1760134790
 RectTransform:
   m_ObjectHideFlags: 0
